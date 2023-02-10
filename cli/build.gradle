@@ -1,0 +1,26 @@
+plugins {
+    id "org.beryx.jlink" version "2.25.0"
+}
+
+application {
+    mainModule = 'io.github.ilnurnasybullin.files.checksum.cli'
+    mainClass = 'io.github.ilnurnasybullin.files.checksum.cli.Main'
+}
+
+jlink {
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    launcher {
+        name = 'cli'
+    }
+}
+
+run {
+    standardInput = System.in
+}
+
+dependencies {
+    implementation project(':core')
+    implementation project(':csv-reader')
+    implementation project(':csv-writer');
+    implementation 'info.picocli:picocli:4.7.0'
+}

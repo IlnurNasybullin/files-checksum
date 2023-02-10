@@ -1,0 +1,6 @@
+rootProject.name = 'files-checksum'
+include 'core'
+include 'cli'
+include 'csv-reader'
+include 'csv-writer'
+
